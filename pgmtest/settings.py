@@ -27,7 +27,7 @@ SECRET_KEY = '-bbmz5azb4a_2y4#s+8a*8mts)e8%4x=ovy)((mj)=jh!i9h77'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1","localhost","pgmtest.herokuapp.com"]
 
 
 # Application definition
