@@ -1,0 +1,27 @@
+{% extends "candidate/home.html" %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-9" style="padding-top: 60px;">
+            {% block news %}
+                {% if ques_list %}
+                    <ul >
+                        {% for n in ques_list %}
+                          <div class="news_headings">
+                                <li><h2>{{ n.ques_no }}. {{ n.question }}</h2></li>
+
+                            </div>
+                        {% endfor %}
+                         <li><a class="btn btn-info" href="{% url 'detail' %}">Start Coding</a></li>
+                    </ul>
+                {% else %}
+                    <p>No questions are available.</p>
+                {% endif %}
+
+
+            {% endblock %}
+        </div>
+
+    </div>
+
+{% endblock %}

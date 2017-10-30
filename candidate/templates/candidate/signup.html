@@ -1,0 +1,52 @@
+{% extends "candidate/home.html" %}
+{% load static %}
+{% block banner %}
+{% endblock %}
+{% block content %}
+<head>
+    <style>
+        #signup .button {
+                    margin: 0px 0px 10px 0px;
+
+            }
+
+    </style>
+</head>
+
+
+    <foo id="signup">
+     <div >
+    <div class="news_headings container"><h3>Sign-up</h3></div>
+
+
+    <div class="row">
+        <div class="headings form cold-md-6" style="border:solid">
+            <form action="#" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+
+
+                    {{ field.label_tag }}
+                    <br />
+                    {{ field }}
+                    <br />
+
+                    {% for error in field.errors %}
+                        <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+
+                {% endfor %}
+                <button type="submit" class="btn button">Sign up</button>
+            </form>
+        </div>
+    </div>
+            </div>
+</foo>
+{% endblock %}
+{% block footer %}
+
+{% endblock %}
+
+
+
+
