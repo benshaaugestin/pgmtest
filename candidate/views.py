@@ -55,18 +55,18 @@ class CompileView(DetailView):
         f.write(p)
         f.close()
 
-        if language== "Java" :
-            os.system("javac %s" % (code_file_path))
-            os.system("java %s > %s" % (code_file_path[ :-5], output_file_path))
-
-        elif language == "C":
-            os.system("gcc %s" % (code_file_path))
-            os.system("./a.out > %s" % (output_file_path))
-
-        elif language == "Python":
-            os.system("python %s > %s" % (code_file_path, output_file_path))
-
-        f = open(output_file_path, "r")
+        # if language== "Java" :
+        #     os.system("javac %s" % (code_file_path))
+        #     os.system("java %s > %s" % (code_file_path[ :-5], output_file_path))
+        #
+        # elif language == "C":
+        #     os.system("gcc %s" % (code_file_path))
+        #     os.system("./a.out > %s" % (output_file_path))
+        #
+        # elif language == "Python":
+        #     os.system("python %s > %s" % (code_file_path, output_file_path))
+        #
+        # f = open(output_file_path, "r")
         return HttpResponse(f.read())
 
 
