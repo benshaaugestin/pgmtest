@@ -35,7 +35,7 @@
 {% endif %}
 </div>
 <div class="col-sm-3">
-    <a class="btn btn-info pull-right col-sm-12" style="height:74" href="{% url 'submit' %}">Finish Your Test</a>
+    <a class="btn pull-right col-sm-12" style="padding: 21px" href="{% url 'submit' %}">Finish Your Test</a>
 </div>
 
 </div>
@@ -53,7 +53,7 @@
             </select>
             <label for="codearea" class="sr-only">Codearea</label>
             <textarea class="form-control" name="codearea" id="codearea" placeholder="enter your code here" rows="10" cols="10"></textarea>
-            <input class="btn btn-info" type="submit" value="Run" id="id_submit" />
+            <input class="btn " type="submit" value="Run" id="id_submit" />
         </form>
         <textarea name="output" class="form-control" id="output" placeholder="output" rows="10" cols="100"></textarea>
     {% endfor %}

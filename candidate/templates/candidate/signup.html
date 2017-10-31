@@ -17,10 +17,16 @@
 
     <foo id="signup">
      <div >
-    <div><h3>Programming Test</h3></div>
+      <div class="container text-center backgroundText">
+            <h1>Better Talent Measurements</h1>
+            <h4> SayOne: #ChanngeTheWorld </h4>
+            <br class="hiddenBelow"/>
+
+        </div>
 
     <div class="row">
         <div class="headings form cold-md-6" style="border:solid">
+        <h3>Register Here</h3>
             <form action="#" method="post">
                 {% csrf_token %}
                 {% for field in form %}
@@ -36,6 +42,7 @@
                     {% endfor %}
 
                 {% endfor %}
+                <br />
                 <button type="submit" class="btn button">Sign up</button>
             </form>
         </div>

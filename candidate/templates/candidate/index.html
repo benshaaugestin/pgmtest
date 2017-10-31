@@ -2,17 +2,19 @@
 {% block content %}
 
     <div class="row">
-        <div class="col-md-9" style="padding-top: 60px;">
+        <div class="col-md-9" >
+
             {% block news %}
                 {% if ques_list %}
                     <ul >
+                        <li><h2 style="margin-left: 11px">Question List</h2></li>
                         {% for n in ques_list %}
                           <div class="news_headings">
                                 <li><h2>{{ n.ques_no }}. {{ n.question }}</h2></li>
 
                             </div>
                         {% endfor %}
-                         <li><a class="btn btn-info" href="{% url 'detail' %}">Start Coding</a></li>
+                         <li><a class="btn" id="btn" href="{% url 'detail' %}">Start Coding</a></li>
                     </ul>
                 {% else %}
                     <p>No questions are available.</p>
