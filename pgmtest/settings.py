@@ -77,16 +77,23 @@ WSGI_APPLICATION = 'pgmtest.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+#
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'd4i3m6cr305dt0',
+#        'HOST': 'ec2-54-221-212-208.compute-1.amazonaws.com',
+#        'USER': 'thouciklnwixnn',
+#        'PORT': '5432',
+#        'PASSWORD': '2eb2721897d0399bad9510adebb8954aa0fd243ed85e8bef368f0511dd4101d4',
+#    }
+# }
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'd4i3m6cr305dt0',
-       'HOST': 'ec2-54-221-212-208.compute-1.amazonaws.com',
-       'USER': 'thouciklnwixnn',
-       'PORT': '5432',
-       'PASSWORD': '2eb2721897d0399bad9510adebb8954aa0fd243ed85e8bef368f0511dd4101d4',
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 

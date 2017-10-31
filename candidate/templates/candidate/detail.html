@@ -1,64 +1,17 @@
 {% extends "candidate/home.html" %}
 {% block content %}
 <head>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-    {% if ques_list %}
-
-                        {% for question in ques_list %}
-<h2 style="
-    border-top-width: 95px;
-    margin-top: 104px;
-">{{ question.ques_no }}. {{ question.question }}</h2>
-
-    <form action="{% url 'compile' question.id %}" method="POST" id="idForm" >
-        {% csrf_token %}
-
-<label for="language">Language</label>
-    <select id="language" name="language">
-      <option value="Python">Python</option>
-      <option value="C">C</option>
-      <option value="Java">Java</option>
-    </select>
-        <label for="codearea" class="sr-only">Codearea</label>
-
-        <textarea style="{
-    color: #171616;
-    background-color: #e3f5f1;}" class="form-control" name="codearea" id="codearea" placeholder="enter your code here" rows="10" cols="10"></textarea>
-        <input class="btn btn-info" type="submit" value="Run" id="id_submit" />
-
-    </form>
-    <textarea name="output" id="output" placeholder="output" rows="10" cols="100"></textarea>
-    {% endfor %}
-    {% endif %}
-
-<div id="MESSAGE-DIV"></div>
-
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-
-<script type="text/javascript">
-    var frm = $('#idForm');
-    frm.submit(function () {
-        $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: frm.serialize(),
-            success: function (data) {
-
-                $("#output").html(data);
-            },
-            error: function(data) {
-                $("#MESSAGE-DIV").html("Something went wrong!");
-            }
-        });
-        return false;
-    });
-</script>
-{% if is_paginated %}
+    <div class="container">
+{% if ques_list %}
+<div class="row">
+<div class="col-sm-9">
+    {% if is_paginated %}
   <ul class="pagination">
     {% if page_obj.has_previous %}
       <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
@@ -80,7 +33,55 @@
   </ul>
 
 {% endif %}
+</div>
+<div class="col-sm-3">
+    <a class="btn btn-info pull-right col-sm-12" style="height:74" href="{% url 'submit' %}">Finish Your Test</a>
+</div>
 
-<a class="btn btn-info" href="{% url 'submit' %}">Finish Your Test</a>
+</div>
 
+    {% for question in ques_list %}
+        <h2 >{{ question.ques_no }}. {{ question.question }}</h2>
+
+        <form action="{% url 'compile' question.id %}" method="POST" id="idForm" >
+            {% csrf_token %}
+            <label for="language">Language</label>
+            <select id="language" class="form-control" name="language">
+                <option value="Python">Python</option>
+                <option value="C">C</option>
+                <option value="Java">Java</option>
+            </select>
+            <label for="codearea" class="sr-only">Codearea</label>
+            <textarea class="form-control" name="codearea" id="codearea" placeholder="enter your code here" rows="10" cols="10"></textarea>
+            <input class="btn btn-info" type="submit" value="Run" id="id_submit" />
+        </form>
+        <textarea name="output" class="form-control" id="output" placeholder="output" rows="10" cols="100"></textarea>
+    {% endfor %}
+{% endif %}
+
+<div id="MESSAGE-DIV"></div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+<script type="text/javascript">
+    var frm = $('#idForm');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+
+                $("#output").html(data);
+            },
+            error: function(data) {
+                $("#output").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
+</script>
+
+
+</div>
 {% endblock %}

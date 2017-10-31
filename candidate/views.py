@@ -42,7 +42,6 @@ class CompileView(DetailView):
              "Python": ".py",
              "Java": ".java",
              }[x]
-
         code_filename="code"+str(num)+ext(language)
         code_file_path = os.path.join(settings.FILES_DIR, code_filename)
         output_filename="output"+str(num)+".txt"
@@ -55,18 +54,18 @@ class CompileView(DetailView):
         f.write(p)
         f.close()
 
-        # if language== "Java" :
-        #     os.system("javac %s" % (code_file_path))
-        #     os.system("java %s > %s" % (code_file_path[ :-5], output_file_path))
-        #
-        # elif language == "C":
-        #     os.system("gcc %s" % (code_file_path))
-        #     os.system("./a.out > %s" % (output_file_path))
-        #
-        # elif language == "Python":
-        #     os.system("python %s > %s" % (code_file_path, output_file_path))
-        #
-        # f = open(output_file_path, "r")
+        if language== "Java" :
+            os.system("javac %s" % (code_file_path))
+            os.system("java %s > %s" % (code_file_path[ :-5], output_file_path))
+
+        elif language == "C":
+            os.system("gcc %s" % (code_file_path))
+            os.system("./a.out > %s" % (output_file_path))
+
+        elif language == "Python":
+            os.system("python %s > %s" % (code_file_path, output_file_path))
+
+        f = open(output_file_path, "r")
         return HttpResponse(f.read())
 
 
@@ -95,6 +94,7 @@ def rand(self):
 
 def signup(request):
     logout(request)
+    os.system("mkdir media")
     if request.method == 'POST':
         form = CandidateForm(request.POST)
         if form.is_valid():
