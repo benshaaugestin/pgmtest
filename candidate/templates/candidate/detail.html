@@ -55,7 +55,7 @@
             <textarea class="form-control" name="codearea" id="codearea" placeholder="enter your code here" rows="10" cols="10"></textarea>
             <input class="btn " type="submit" value="Run" id="id_submit" />
         </form>
-        <textarea name="output" class="form-control" id="output" placeholder="output" rows="10" cols="100"></textarea>
+        <textarea name="output" class="form-control" id="output" placeholder="output" rows="10" cols="100" readonly></textarea>
     {% endfor %}
 {% endif %}
 
@@ -75,7 +75,7 @@
                 $("#output").html(data);
             },
             error: function(data) {
-                $("#output").html("Something went wrong!");
+                $("#output").html("Something went wrong!\nYour output can't be displayed.\nDon't worry, just continue coding ");
             }
         });
         return false;

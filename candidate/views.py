@@ -49,21 +49,20 @@ class CompileView(DetailView):
 
         f= open(code_file_path,"w+")
         lang="# language = "+language+"\n"
-        f.write(lang)
         p=request.POST.get("codearea")
         f.write(p)
         f.close()
 
         if language== "Java" :
             os.system("javac %s" % (code_file_path))
-            os.system("java %s > %s" % (code_file_path[ :-5], output_file_path))
+            os.system("java %s > %s 2> %s" % (code_file_path[ :-5], output_file_path, output_file_path))
 
         elif language == "C":
             os.system("gcc %s" % (code_file_path))
-            os.system("./a.out > %s" % (output_file_path))
+            os.system("./a.out > %s 2> %s" % (output_file_path,output_file_path))
 
         elif language == "Python":
-            os.system("python %s > %s" % (code_file_path, output_file_path))
+            os.system("python %s > %s 2> %s" % (code_file_path, output_file_path, output_file_path))
 
         f = open(output_file_path, "r")
         return HttpResponse(f.read())
@@ -87,7 +86,7 @@ def rand(self):
         attach_file_path = os.path.join(settings.FILE_DIR, path)
         email.attach_file(attach_file_path)
     email.send()
-    os.system("rm %s/*.*" % (file_path))
+    os.system("rm -r media")
     return HttpResponseRedirect('/')
 
 
