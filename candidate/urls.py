@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^submit/$', views.rand, name='submit'),
     url(r'^compile/(?P<num>[-\d]+)/', views.CompileView.as_view(), name="compile"),
-    url(r'^coding/', views.DetailView.as_view(), name='detail'),
+    url(r'^coding/(?P<pk>[-\d]+)/', views.DetailsView.as_view(), name='detail'),
     url(r'^queslist', views.IndexView.as_view(), name='index'),
 
     ]

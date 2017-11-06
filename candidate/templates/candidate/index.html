@@ -14,7 +14,9 @@
 
                             </div>
                         {% endfor %}
-                         <li><a class="btn" id="btn" href="{% url 'detail' %}">Start Coding</a></li>
+                        <li><a class="btn" id="btn" href="{% url 'detail' 1 %}">Start Coding</a></li>
+
+
                     </ul>
                 {% else %}
                     <p>No questions are available.</p>

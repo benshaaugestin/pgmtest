@@ -1,16 +1,14 @@
-from django.views.generic import FormView
+import os
 from django.views.generic import ListView,DetailView
-from . forms import CandidateForm
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
-from . models import Question
-import os
 from django.core.mail.message import EmailMessage
-from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
-from django.core.files import File
-from django.core.files.base import ContentFile
+from . forms import CandidateForm
+from . models import Question
+
+
 
 
 class IndexView(ListView):
@@ -21,13 +19,16 @@ class IndexView(ListView):
         return Question.objects.all()
 
 
-class DetailView(ListView):
+class DetailsView(DetailView):
+    model=Question
     template_name = 'candidate/detail.html'
-    context_object_name = 'ques_list'
-    paginate_by = 1
 
-    def get_queryset(self):
-        return Question.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        ques_list = Question.objects.all()
+        context['ques_list']= ques_list
+        return  context
+
 
 
 class CompileView(DetailView):
@@ -92,7 +93,7 @@ def rand(self):
 
 
 def signup(request):
-    logout(request)
+
     os.system("mkdir media")
     if request.method == 'POST':
         form = CandidateForm(request.POST)

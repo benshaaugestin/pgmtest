@@ -11,25 +11,13 @@
 {% if ques_list %}
 <div class="row">
 <div class="col-sm-9">
-    {% if is_paginated %}
   <ul class="pagination">
-    {% if page_obj.has_previous %}
-      <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&laquo;</span></li>
-    {% endif %}
-    {% for i in paginator.page_range %}
-      {% if page_obj.number == i %}
-        <li class="active"><span>Question{{ i }} <span class="sr-only">(current)</span></span></li>
-      {% else %}
-        <li><a href="?page={{ i }}">Question{{ i }}</a></li>
-      {% endif %}
+
+    {% for page_obj in ques_list %}
+      <li><a href="{% url 'detail' page_obj.ques_no %}">Question{{ page_obj.ques_no }}</a></li>
+
     {% endfor %}
-    {% if page_obj.has_next %}
-      <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&raquo;</span></li>
-    {% endif %}
+
   </ul>
 
 {% endif %}
@@ -40,7 +28,7 @@
 
 </div>
 
-    {% for question in ques_list %}
+
         <h2 >{{ question.ques_no }}. {{ question.question }}</h2>
 
         <form action="{% url 'compile' question.id %}" method="POST" id="idForm" >
@@ -56,8 +44,6 @@
             <input class="btn " type="submit" value="Run" id="id_submit" />
         </form>
         <textarea name="output" class="form-control" id="output" placeholder="output" rows="10" cols="100" readonly></textarea>
-    {% endfor %}
-{% endif %}
 
 <div id="MESSAGE-DIV"></div>
 
