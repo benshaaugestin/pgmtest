@@ -23,14 +23,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/candidate/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5673077" vertical-offset="920" max-vertical-offset="1755">
+            <state vertical-scroll-proportion="-5.0" vertical-offset="920" max-vertical-offset="1755">
               <caret line="81" column="65" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15873016" vertical-offset="0" max-vertical-offset="567">
+              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,6 +158,7 @@
         <option value="$PROJECT_DIR$/candidate/templates/candidate/index.html" />
         <option value="$PROJECT_DIR$/candidate/forms.py" />
         <option value="$PROJECT_DIR$/candidate/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -893,13 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15228426" vertical-offset="0" max-vertical-offset="591">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/candidate/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1155">
@@ -986,11 +990,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/candidate/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5673077" vertical-offset="920" max-vertical-offset="1755">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="920" max-vertical-offset="1755">
           <caret line="81" column="65" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15873016" vertical-offset="0" max-vertical-offset="567">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
