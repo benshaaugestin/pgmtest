@@ -2,12 +2,11 @@ import os
 from django.contrib.auth import login, authenticate, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView,DetailView
+from django.core.mail.message import EmailMessage
 from django.shortcuts import render, redirect
 from django.conf import settings
 from . forms import CandidateForm
 from . models import Question
-
-
 
 
 class IndexView(ListView):
