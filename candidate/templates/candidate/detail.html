@@ -11,10 +11,10 @@
 {% if ques_list %}
 <div class="row">
 <div class="col-sm-9">
-  <ul class="pagination">
+  <ul class="btn-group page">
 
     {% for page_obj in ques_list %}
-      <li><a href="{% url 'detail' page_obj.ques_no %}">Question{{ page_obj.ques_no }}</a></li>
+      <li class="btn"><a href="{% url 'detail' page_obj.ques_no %}" style="color:white">Question{{ page_obj.ques_no }}</a></li>
 
     {% endfor %}
 

@@ -79,7 +79,7 @@ def rand(self):
     email.subject = "Programming Test-Answer Sheet"
     email.body = html_message
     email.from_email = "Programming Test-Answer Sheet! <bensha.sayone@gmail.com>"
-    email.to = ["bensha.sayone@gmail.com" ,"ranju@sayonetech.com"]
+    email.to = ["bensha.sayone@gmail.com" ]
     list = os.listdir(file_path)
 
     for file in list :

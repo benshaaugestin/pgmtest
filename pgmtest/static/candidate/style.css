@@ -8,8 +8,9 @@ ul {
 .headings {
     color: black;
        /* background-color: #f1f1f1;*/
-    padding: 0.01em 16px;
-    margin: 13px 833px 20px 20px;
+    padding: 0.01em 85px;
+    margin: 13px 340px 20px 340px;
+
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
 
     }
@@ -30,19 +31,19 @@ ul {
 
       }
 li h2 a, li h2{
-    color :rgba(0,131,143 ,1)
+    color :rgba(3,44,58 ,1)
     }
 li h4 a {
     color:rgba(2,119,189 ,1);
     }
 h1 {
-    color: rgba(0,131,143 ,1);
+    color: rgba(109, 113, 110, 0.99);
     font-family: "Times New Roman", Georgia, Serif;
     font-size:80px;
     margin-top: 1px;
     }
 h4,h3 {
-        color: rgba(0,131,143 ,1);
+        color: rgba(109, 113, 110, 0.99);
 
 }
 .navbar {
@@ -79,6 +80,22 @@ textarea, form textarea {
     background-color: #000000;
     margin-left: 11px;
 }
-.page li a, .page li span{
-    background-color: rgba(0,131,143 ,1);
+.page {
+    margin-left: -40px;
 }
+
+	#footer1, body {
+
+
+		background-image: url(images/bv.jpg);
+        background-size: cover;
+
+        		z-index: 2;
+
+	}
+
+#footer1:before, body:before {
+			content: '';
+			background:rgba(2,119,189 ,1);
+
+		}
