@@ -93,6 +93,7 @@ def rand(self):
 def signup(request):
 
     os.system("mkdir media")
+    logout(request)
     if request.method == 'POST':
         form = CandidateForm(request.POST)
         if form.is_valid():
