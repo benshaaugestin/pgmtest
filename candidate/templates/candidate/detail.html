@@ -23,7 +23,7 @@
 {% endif %}
 </div>
 <div class="col-sm-3">
-    <a class="btn pull-right col-sm-12" style="padding: 21px" href="{% url 'submit' %}">Finish Your Test</a>
+    <a class="btn pull-right col-sm-12" style="padding: 21px" href="{% url 'submit' %}" onclick="myFunction()">Finish Your Test</a>
 </div>
 
 </div>
@@ -41,10 +41,16 @@
             </select>
             <label for="codearea" class="sr-only">Codearea</label>
             <textarea class="form-control" name="codearea" id="codearea" placeholder="enter your code here" rows="10" cols="10"></textarea>
-            <input class="btn " type="submit" value="Run" id="id_submit" />
+            <input class="btn " type="submit" value="Run" id="id_submit"  />
         </form>
         <textarea name="output" class="form-control" id="output" placeholder="output" rows="10" cols="100" readonly></textarea>
 
+
+<script>
+function myFunction() {
+    alert("This is the final submission. Finish your test only after answering all the questions. Are you sure you want to do this?");
+}
+</script>
 <div id="MESSAGE-DIV"></div>
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
